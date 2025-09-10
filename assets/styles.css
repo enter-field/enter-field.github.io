@@ -12,17 +12,42 @@ h1 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center
 }
+/* Link styles */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-a:link {
-    text-decoration: none;
-    color: #ffffff; /* sets the link color */
-    text-decoration: none; /* removes the underline */
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-}
+/* Visited links */
 a:visited {
+    color: #ffffff; /* keep same color if you don’t want purple */
     text-decoration: none;
 }
+
+/* Hover effect */
 a:hover {
-    text-decoration: underline; /* adds underline on hover */
+    text-decoration: underline;
+}
+/* Button-like link styles */
+a.button-link {
+    display: inline-block;           /* makes it behave like a button */
+    padding: 10px 20px;              /* space inside */
+    background-color: #1a73e8;       /* button background */
+    color: #ffffff;                  /* text color */
+    text-decoration: none;           /* remove underline */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border-radius: 8px;              /* rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.button-link:hover {
+    background-color: #1557b0;       /* darker on hover */
+    transform: translateY(-2px);     /* subtle lift effect */
+}
+
+a.button-link:active {
+    background-color: #0c3d80;       /* even darker when pressed */
+    transform: translateY(0);        /* reset lift */
 }
