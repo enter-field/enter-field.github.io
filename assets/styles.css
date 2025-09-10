@@ -12,3 +12,16 @@ h1 {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center
 }
+a {
+    color: #4b4b4b; /* sets the link color */
+    text-decoration: none; /* removes the underline */
+}
+a:hover {
+    text-decoration: underline; /* adds underline on hover */
+}
+a:unvisited {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
