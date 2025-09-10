@@ -17,6 +17,7 @@ a:link {
     text-decoration: none;
     color: #ffffff; /* sets the link color */
     text-decoration: none; /* removes the underline */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
 }
 a:visited {
