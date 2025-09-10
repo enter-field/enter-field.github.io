@@ -13,14 +13,14 @@ h1 {
   text-align: center
 }
 a {
-    color: #4b4b4b; /* sets the link color */
+    color: #ffffff; /* sets the link color */
     text-decoration: none; /* removes the underline */
     text-align: center;
 }
 a:hover {
     text-decoration: underline; /* adds underline on hover */
 }
-a:unvisited {
+a:link {
     text-decoration: none;
 }
 a:visited {
