@@ -39,8 +39,6 @@ a.button-link {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     border-radius: 8px;              /* rounded corners */
-    text-align: center;
-    margin-top: 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -62,8 +60,6 @@ a.gradient-btn {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
     border-radius: 8px;
-    text-align: center;
-    margin-top: 20px;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
