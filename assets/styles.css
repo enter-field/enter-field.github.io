@@ -75,7 +75,7 @@ a.gradient-btn:active {
 hr {
     border: none;
     height: 2px;
-    background: white; /* gradient color */
+    color: white;
     margin: 20px 0;
     border-radius: 10px;
 }
