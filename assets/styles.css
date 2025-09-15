@@ -72,3 +72,10 @@ a.gradient-btn:active {
     transform: translateY(0);      /* reset when clicked */
     opacity: 0.8;
 }
+hr {
+    border: none;
+    height: 2px;
+    background: white; /* gradient color */
+    margin: 20px 0;
+    border-radius: 10px;
+}
