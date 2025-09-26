@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(135deg, #50acda, #20558f); /* Gradient background */
+  background:  #20558f; /* Gradient background */
 }
 p {
   color: rgb(255, 255, 255);
@@ -9,6 +9,28 @@ p {
 h1 {
   color: rgb(255, 255, 255);
   font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+h2 {
+    color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+h3 {
+    color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+ul {
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+li {
+    color: rgb(255, 255, 255);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center
 }
