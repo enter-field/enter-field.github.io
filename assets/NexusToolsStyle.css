@@ -1,0 +1,81 @@
+body {
+  background: linear-gradient(135deg, #50acda, #20558f); /* Gradient background */
+}
+p {
+  color: rgb(255, 255, 255);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+h1 {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center
+}
+/* Link styles */
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Visited links */
+a:visited {
+    color: #ffffff; /* keep same color if you don’t want purple */
+    text-decoration: none;
+}
+
+/* Hover effect */
+a:hover {
+    text-decoration: underline;
+}
+/* Button-like link styles */
+a.button-link {
+    display: inline-block;           /* makes it behave like a button */
+    padding: 10px 20px;              /* space inside */
+    background-color: #1a73e8;       /* button background */
+    color: #ffffff;                  /* text color */
+    text-decoration: none;           /* remove underline */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border-radius: 8px;              /* rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.button-link:hover {
+    background-color: #1557b0;       /* darker on hover */
+    transform: translateY(-2px);     /* subtle lift effect */
+}
+
+a.button-link:active {
+    background-color: #0c3d80;       /* even darker when pressed */
+    transform: translateY(0);        /* reset lift */
+}
+a.gradient-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* gradient */
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+a.gradient-btn:hover {
+    transform: translateY(-2px);   /* subtle lift */
+    opacity: 0.9;                  /* slight fade effect */
+}
+
+a.gradient-btn:active {
+    transform: translateY(0);      /* reset when clicked */
+    opacity: 0.8;
+}
+hr {
+    border: none;
+    height: 2px;
+    color: white;
+    margin: 20px 0;
+    border-radius: 10px;
+}
