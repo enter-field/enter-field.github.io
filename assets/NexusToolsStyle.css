@@ -26,6 +26,8 @@ h3 {
 }
 hr {
   color: white;
+  border-radius: 10px;
+  border-top: 2px solid white;
 }
 ul {
   color: rgb(255, 255, 255);
@@ -96,11 +98,4 @@ a.gradient-btn:hover {
 a.gradient-btn:active {
     transform: translateY(0);      /* reset when clicked */
     opacity: 0.8;
-}
-hr {
-    border: none;
-    height: 2px;
-    color: white;
-    margin: 20px 0;
-    border-radius: 10px;
 }

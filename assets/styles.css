@@ -1,5 +1,5 @@
 body {
-  background: rgb(50, 50, 50);
+  background: linear-gradient(to right, #6717cd, #2871fa);
 }
 p {
   color: rgb(255, 255, 255);
@@ -26,6 +26,7 @@ h3 {
 }
 hr {
   color: white;
+  border-radius: 10px;
 }
 ul {
   color: rgb(255, 255, 255);
@@ -37,11 +38,27 @@ li {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center
 }
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ProgrammingLanguageListContainer li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 3px
+}
 /* Link styles */
 a {
     color: #ffffff;
     text-decoration: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 /* Visited links */
@@ -58,7 +75,7 @@ a:hover {
 a.button-link {
     display: inline-block;           /* makes it behave like a button */
     padding: 10px 20px;              /* space inside */
-    background-color: #1a73e8;       /* button background */
+    background-color: #1f3f96;       /* button background */
     color: #ffffff;                  /* text color */
     text-decoration: none;           /* remove underline */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -97,10 +114,4 @@ a.gradient-btn:active {
     transform: translateY(0);      /* reset when clicked */
     opacity: 0.8;
 }
-hr {
-    border: none;
-    height: 2px;
-    color: white;
-    margin: 20px 0;
-    border-radius: 10px;
-}
+
