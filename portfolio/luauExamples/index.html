@@ -139,7 +139,7 @@ local function connectLanyard(lanyard)
 end
 
 local function onCharacterAdded(char)
-	print("Character added:", char.Name)
+	print("character added, name:", char.Name)
 	
 	for _, child in ipairs(char:GetChildren()) do
 		if child:IsA("Model") and child:GetAttribute("IsLanyardBadge") == true then
