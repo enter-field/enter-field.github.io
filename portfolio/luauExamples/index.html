@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>luau code snippets</title>
+    <link rel="icon" type="image/png" href="/assets/portfolioIcon.png" size="16x16">
+    <link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-twilight.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js" defer></script>
+</head>
+
+<div class="HeaderContainer">
+    <img src="/assets/luauLogo.svg" width="50px">
+<h1>Luau Code Snippets</h1>
+</div>
+<hr>
+
+<h2>Team Manager System | Worked alongside TopbarPlus UI</h2>
+<pre><code class="language-lua">
+    local TeamChangeEvent = game.ReplicatedStorage:WaitForChild("ChangeTeams")
+local function ServerFiredResponse(player, teamName)
+	
+	local TeamToChangePlayerTo = game.Teams:FindFirstChild(teamName)
+	local MarketplaceService = game:GetService("MarketplaceService")
+	local PlayersRank = player:GetRankInGroup(33042472)
+	
+	if not TeamToChangePlayerTo then
+		warn("Invalid team sent:", teamName)
+		return
+	end
+	
+	if TeamToChangePlayerTo.Name == "Donor" then
+		
+		if MarketplaceService:UserOwnsGamePassAsync(player.UserId, 1615243735) then
+			print("user owns gamepass! continuing code...")
+		else
+			print("mmm, come back when your a little more richer")
+			return
+		end
+	end
+	if TeamToChangePlayerTo.Name == "Staff" or TeamToChangePlayerTo.Name == "Security" then
+		
+		local PlayersRank = player:GetRankInGroup(33042472)
+		if table.find({1, 2, 253, 254, 255}, PlayersRank) then
+			print("user is right rank! continuing code...")
+		else
+			print("user isn't correct rank! GE-")
+			return
+		end
+	end
+	
+	if TeamToChangePlayerTo.Name == "Staff Leadership" or TeamToChangePlayerTo.Name == "Security Command" then
+		if MarketplaceService:UserOwnsGamePassAsync(player.UserId, 1615243735) then
+			print("user owns gamepass! continuing code...")
+		else	
+			print("gng your too broke to be a leader")
+			return
+			
+		end
+	end
+	
+	if TeamToChangePlayerTo.Name == "Agency Personnel" then
+		
+		
+		if table.find({253, 254, 255}, PlayersRank) then
+			print("user is right rank! continuing code...")
+		else
+			print("user isn't correct rank! GE-")
+			return
+		end
+	end
+	
+	if TeamToChangePlayerTo.Name == "Agency Defense" then
+		if table.find({22, 253, 254, 255}, PlayersRank) then
+			print("user is right rank! continuing code...")
+		else
+			print("twin you are NOT a mod")
+			return
+		end
+	end
+	
+	
+	if TeamToChangePlayerTo then
+		player.Team = TeamToChangePlayerTo
+		player:LoadCharacter()
+	end
+end
+TeamChangeEvent.OnServerEvent:Connect(ServerFiredResponse)
+</code></pre>
+<hr>
+<h2>Lanyard System | Integration for Whitehill Group's DWProx Net2+ Door System</h2>
+<pre><code class="language-lua">
+local Players = game:GetService("Players")
+
+local function connectLanyard(lanyard)
+	if not lanyard:GetAttribute("IsLanyardBadge") then return end
+
+	print("connecting lanyard: " .. lanyard.Name)
+
+	for _, descendent in ipairs(lanyard:GetDescendants()) do
+		if descendent:IsA("BasePart") then
+			descendent.Touched:Connect(function(hit)
+
+				if hit and hit:GetAttribute("IsNet2Reader") == true then
+
+					local doorModel = hit
+					for i = 1, 4 do
+						if doorModel.Parent then
+							doorModel = doorModel.Parent
+						end
+					end
+
+					local api = doorModel:WaitForChild("DWPROXAPI", 5)
+					if api then
+						
+						local RequiredClearance = hit:GetAttribute("RequiredClearance") 
+						local LanyardClearance = lanyard:GetAttribute("Clearance")
+						
+						
+						if api:IsA("BindableFunction") then
+							
+							if LanyardClearance >= RequiredClearance then
+								api:Invoke("OPEN")
+							else
+								
+							end
+						else
+							print("the API exists, but isn't a BindableFunction")
+						end
+					else
+						print("didn't find the API at all under that door model (was it a door you touched?)")
+					end
+				end
+			end)
+		end
+	end
+end
+
+local function onCharacterAdded(char)
+	print("Character added:", char.Name)
+	
+	for _, child in ipairs(char:GetChildren()) do
+		if child:IsA("Model") and child:GetAttribute("IsLanyardBadge") == true then
+			connectLanyard(child)
+		end
+	end
+	char.DescendantAdded:Connect(function(desc)
+		if desc:IsA("Model") and desc:GetAttribute("IsLanyardBadge") then
+			connectLanyard(desc)
+		end
+	end)
+end
+
+
+Players.PlayerAdded:Connect(function(player)
+	player.CharacterAdded:Connect(onCharacterAdded)
+end)
+</code></pre>
